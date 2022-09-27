@@ -41,8 +41,12 @@ commit = true
 tag = true
 push = false
 
+[tool.setuptools.packages.find]
+namespaces = true
+where = ["src"]
+
 [tool.setuptools.package-data]
-sampledata = ["*.csv"]
+"pyqcc.sampledata" = ["*.csv"]
 
 [tool.bumpver.file_patterns]
 "pyproject.toml" = [
