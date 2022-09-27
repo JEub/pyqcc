@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 #
-# Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
+#  Copyright (C) 2022 James Eubanks <jeubanks.github@gmail.com>
+# 
+# Orignal work - pyspc
+#   Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

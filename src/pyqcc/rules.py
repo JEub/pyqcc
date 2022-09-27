@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 #
-# Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
+#  Copyright (C) 2022 James Eubanks <jeubanks.github@gmail.com>
+# 
+# Orignal work - pyspc
+#   Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from .pyspc import spc
+from .pyqcc import spc
 
 
 class rules(object):

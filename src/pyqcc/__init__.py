@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 #
-# Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
+#  Copyright (C) 2022 James Eubanks <jeubanks.github@gmail.com>
+# 
+# Orignal work - pyspc
+#   Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,9 +20,9 @@
 
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
-__version__ = '0.4'
-__author__ = "Carlos Silva"
-__email__ = "carlosqsilva@outlook.com"
+__version__ = '0.1.1'
+__author__ = "James Eubanks"
+__email__ = "jeubanks.github@gmail.com"
 
 import warnings
 warnings.simplefilter("ignore")
@@ -41,5 +44,5 @@ warnings.simplefilter("ignore")
 from .ccharts import *
 from .sampledata import *
 
-from .pyspc import spc
+from .pyqcc import qcc
 from .rules import rules
