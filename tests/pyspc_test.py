@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from pyspc import *
+from pyqcc import *
 
 a = qcc(pistonrings) + cusum() + ewma() + rules()
 #print(a)
