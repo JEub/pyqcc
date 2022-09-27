@@ -1,11 +1,11 @@
-# PySpc
-[![PyPI version](https://badge.fury.io/py/pyspc.svg)](https://badge.fury.io/py/pyspc)
+# PyQCC
+Version: 0.1.1  
+
+This package is a modification of the original Work by Carlos Henrique Silva's <carlosqsilva@outlook.com> `pyspc` package. The original work can be found [here](https://github.com/carlosqsilva/pyspc). 
 
 Statistical Process Control Charts Library for Humans
 
-PySpc is a Python library aimed to make Statistical Process Control Charts as easy as possible.
-
-Take a look at my other project [cchart-online](https://carlosqsilva.github.io/ccharts-online/).
+PyQCC is a Python library aimed to make Statistical Process Control Charts as easy as possible but especially relevant to statsisticians for performing Quality Control.
 
 ## Features
 
@@ -28,49 +28,41 @@ Multivariate Control Charts
 * T Square Hotelling with SubGroup
 * Multivariate Exponentially Weighted Moving Average (MEWMA)
 
-##Installation
+## Installation
 ```bash
-$ pip install pyspc
+$ pip install pyqcc
 ```
 
 ## Usage
 ```python
-from pyspc import *
+from pyqcc import *
 
-a = spc(pistonrings) + ewma()
+a = qcc(pistonrings) + ewma()
 print(a)
 ```
-<img src="https://github.com/carlosqsilva/pyspc/blob/master/screenshots/1-screen.png" align="center" height="400" width="450">
+<img src="https://github.com/jeub/pyqcc/blob/main/screenshots/1-screen.png" align="center" height="400" width="450">
 
 adding rules highlighting...
 ```python
 a + rules()
 ```
 
-<img src="https://github.com/carlosqsilva/pyspc/blob/master/screenshots/2-screen.png" align="center" height="400" width="450">
+<img src="https://github.com/jeub/pyqcc/blob/main/screenshots/2-screen.png" align="center" height="400" width="450">
 
 adding more control charts to the mix...
 ```python
 a + cusum() + xbar_sbar() + sbar()
 ``` 
 
-<img src="https://github.com/carlosqsilva/pyspc/blob/master/screenshots/3-screen.png" align="center" height="500" width="450">
+<img src="https://github.com/jeub/pyqcc/blob/main/screenshots/3-screen.png" align="center" height="500" width="450">
 
 it comes with 18 sample datasets to play with, available in **./pyspc/sampledata**, you can use your own data (of course). Your data can be nested lists, numpy array or pandas DataFrame.
 ```python
 import numpy
-from pyspc import *
+from pyqcc import *
 fake_data = numpy.random.randn(30, 5) + 100
-a = spc(fake_data) + xbar_rbar() + rbar() + rules()
+a = qcc(fake_data) + xbar_rbar() + rbar() + rules()
 print(a)
 ```
 
-<img src="https://github.com/carlosqsilva/pyspc/blob/master/screenshots/5-screen.png" align="center" height="400" width="450">
-
-## Gtk Gui
-Its also available a python gui application for those who do not like to mess with code.
-
-```bash
-$ python3 pyspc_gui.py
-```
-![alt text](screenshots/4-screen.png "Gui Application")
+<img src="https://github.com/jeub/pyqcc/blob/main/screenshots/5-screen.png" align="center" height="400" width="450">
