@@ -20,9 +20,9 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics"
 ]
 dependencies = [
-    "pandas >= 1.1.0" ,
-    "numpy",
-    "scipy",
+    "pandas <= 1.4.0" ,
+    "numpy >= 1.23.3",
+    "scipy >= 1.9.1",
     'tomli; python_version < "3.11"'
 ]
 
