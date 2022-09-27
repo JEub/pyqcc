@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyqcc_jeub"
+name = "pyqcc"
 version = "0.0.2"
 authors = [
   { name="James Eubanks", email="jeubanks.github@gmail.com" },
@@ -20,7 +20,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics"
 ]
 dependencies = [
-    "pandas <= 1.4.0" ,
+    "pandas >= 1.1.0" ,
     "numpy >= 1.23.3",
     "scipy >= 1.9.1",
     'tomli; python_version < "3.11"'
@@ -40,6 +40,9 @@ commit_message = "bump version {old_version} -> {new_version}"
 commit = true
 tag = true
 push = false
+
+[tool.setuptools.package-data]
+sampledata = ["*.csv"]
 
 [tool.bumpver.file_patterns]
 "pyproject.toml" = [
