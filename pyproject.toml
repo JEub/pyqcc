@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyqcc_jeub"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="James Eubanks", email="jeubanks.github@gmail.com" },
   { name="Carlos Silva", email="carlosqsilva@outlook.com" }
@@ -34,7 +34,7 @@ test = []
 "Bug Tracker" = "https://github.com/jeub/pyqcc/issues"
 
 [tool.bumpver]
-current_version = "0.1.2"
+current_version = "0.0.2"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
@@ -44,6 +44,7 @@ push = false
 [tool.bumpver.file_patterns]
 "pyproject.toml" = [
     'current_version = "{version}"',
+    'version = "{version}"'
 ]
 "src/pyqcc/__init__.py" = [
     "{version}"
