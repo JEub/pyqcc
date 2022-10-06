@@ -32,7 +32,7 @@ plt.style.use('grayscale')
 mpl.rcParams['lines.markersize'] = 4
 
 
-class spc(object):
+class qcc(object):
 
     _title = 'SPC : Statistical Process Control Charts for Humans'
 
