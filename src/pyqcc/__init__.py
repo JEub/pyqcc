@@ -20,7 +20,7 @@
 
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 __author__ = "James Eubanks"
 __email__ = "jeubanks.github@gmail.com"
 
