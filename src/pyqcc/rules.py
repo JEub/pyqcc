@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from .pyqcc import spc
+from .pyqcc import qcc
 
 
 class rules(object):
@@ -40,7 +40,7 @@ class rules(object):
 #                          self.RULES_6_TRENDING, RULES_14_UP_DOWN]
 
     def __radd__(self, model):
-        if isinstance(model, spc):
+        if isinstance(model, qcc):
             model.points = self.layers
             return model
 
