@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from ..pyqcc import spc
+from ..pyqcc import qcc
 
 
 class ccharts(object):
@@ -9,7 +9,7 @@ class ccharts(object):
         self.layers = [self]
 
     def __radd__(self, model):
-        if isinstance(model, spc):
+        if isinstance(model, qcc):
             model.layers += self.layers
             return model
 
