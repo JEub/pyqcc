@@ -25,9 +25,4 @@ class u(ccharts):
             lcl.append(ubar - 3 * np.sqrt(ubar / i))
             ucl.append(ubar + 3 * np.sqrt(ubar / i))
 
-#        ax.plot([0, len(data2)], [ubar, ubar], 'k-')
-#        ax.step(lcl, 'r', where='mid')
-#        ax.step(ucl, 'r', where='mid')
-#        ax.plot(data2, 'bo-')
-
         return (data2, ubar, lcl, ucl, self._title)
