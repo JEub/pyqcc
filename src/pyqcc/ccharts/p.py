@@ -20,10 +20,6 @@ class p(ccharts):
         data2 = data / sizes
         pbar = np.mean(data2)
 
-        for n in sizes:
-            assert n * pbar >= 5
-            assert n * (1 - pbar) >= 5
-
         if np.mean(sizes) == sizes[0]:
             size = sizes[0]
             lcl = pbar - 3 * np.sqrt((pbar * (1 - pbar)) / size)

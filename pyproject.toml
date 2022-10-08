@@ -23,6 +23,7 @@ dependencies = [
     "pandas >= 1.1.0" ,
     "numpy",
     "scipy",
+    "matplotlib < 3.6.0",
     'tomli; python_version < "3.11"'
 ]
 
