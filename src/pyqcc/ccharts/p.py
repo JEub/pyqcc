@@ -30,6 +30,9 @@ class p(ccharts):
             if ucl > 1:
                 ucl = 1
 
+            if newdata is not None:
+                return (newdata, pbar, lcl, ucl, self._title)
+
             return (data2, pbar, lcl, ucl, self._title)
 
         else:
@@ -37,5 +40,8 @@ class p(ccharts):
             for size in sizes:
                 lcl.append(pbar - 3 * np.sqrt((pbar * (1 - pbar)) / size))
                 ucl.append(pbar + 3 * np.sqrt((pbar * (1 - pbar)) / size))
+            
+            if newdata is not None:
+                return (newdata, pbar, lcl, ucl, self._title)
 
             return (data2, pbar, lcl, ucl, self._title)
