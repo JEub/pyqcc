@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 #  Copyright (C) 2022 James Eubanks <jeubanks.github@gmail.com>
-# 
+#
 # Orignal work - pyspc
 #   Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
 #
@@ -18,13 +18,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
-__version__ = '0.1.6'
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+__version__ = "0.1.9"
 __author__ = "James Eubanks"
 __email__ = "jeubanks.github@gmail.com"
 
 import warnings
+
 warnings.simplefilter("ignore")
 
 # For testing purposes we might need to set mpl backend before any
@@ -38,7 +39,7 @@ warnings.simplefilter("ignore")
 #         # we were instructed
 #         mpl.use(env_backend)
 
-#_set_mpl_backend()
+# _set_mpl_backend()
 
 
 from .ccharts import *

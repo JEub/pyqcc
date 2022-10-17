@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# 
+#
 #  Copyright (C) 2022 James Eubanks <jeubanks.github@gmail.com>
-# 
+#
 # Orignal work - pyspc
 #   Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
 #
@@ -33,15 +33,15 @@ class PlotCharts(object):
     def plot_chart(self, ax, values, center, lcl, ucl, title, newvalues=None):
 
         ax.yaxis.tick_right()
-        ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.3f'))
+        ax.yaxis.set_major_formatter(mtick.FormatStrFormatter("%.3f"))
 
         num = len(values)
         if isinstance(values[0], list):
             num = len(values[0])
 
         if newvalues:
-            ax.plot([num - 0.5] * 2, [lcl, ucl], 'k--')
-            ax.plot(values + newvalues, 'bo--')
+            ax.plot([num - 0.5] * 2, [lcl, ucl], "k--")
+            ax.plot(values + newvalues, "bo--")
             num += len(newvalues)
 
         newx = list(range(num))
@@ -50,24 +50,26 @@ class PlotCharts(object):
 
         if isinstance(lcl, list) and isinstance(ucl, list):
             ax.yaxis.set_ticks([center])
-            ax.plot([-0.3, num], [center, center], 'k-')
-            ax.plot(values, 'bo--')
-            ax.fill_between(newx, lcl, ucl, facecolor='green', alpha=0.4, step='mid')
-            ax.step(newx, lcl, 'r:', where='mid')
-            ax.step(newx, ucl, 'r:', where='mid')
+            ax.plot([-0.3, num], [center, center], "k-")
+            ax.plot(values, "bo--")
+            ax.fill_between(newx, lcl, ucl, facecolor="green", alpha=0.4, step="mid")
+            ax.step(newx, lcl, "r:", where="mid")
+            ax.step(newx, ucl, "r:", where="mid")
 
         else:
-            ax.fill_between([-0.3, num], [lcl, lcl], [ucl, ucl], facecolor='green', alpha=0.4)
+            ax.fill_between(
+                [-0.3, num], [lcl, lcl], [ucl, ucl], facecolor="green", alpha=0.4
+            )
             ax.yaxis.set_ticks([lcl, center, ucl])
-            ax.plot([0, num], [center, center], 'k-')
-            ax.plot([0, num], [lcl, lcl], 'r:')
-            ax.plot([0, num], [ucl, ucl], 'r:')
+            ax.plot([0, num], [center, center], "k-")
+            ax.plot([0, num], [lcl, lcl], "r:")
+            ax.plot([0, num], [ucl, ucl], "r:")
 
             if isinstance(values[0], list):
-                ax.plot(values[0], 'bo--')
-                ax.plot(values[1], 'bo--')
+                ax.plot(values[0], "bo--")
+                ax.plot(values[1], "bo--")
             else:
-                ax.plot(values, 'bo--')
+                ax.plot(values, "bo--")
 
         # Set the title
         ax.set_title(title)
@@ -75,7 +77,9 @@ class PlotCharts(object):
         # Change de y limits of the graph
         ylim = ax.get_ylim()
         factor = 0.2
-        new_ylim = (ylim[0] + ylim[1]) / 2 + np.array((-0.5, 0.5)) * (ylim[1] - ylim[0]) * (1 + factor)
+        new_ylim = (ylim[0] + ylim[1]) / 2 + np.array((-0.5, 0.5)) * (
+            ylim[1] - ylim[0]
+        ) * (1 + factor)
         if lcl == 0:
             ax.set_ylim([0, new_ylim[1]])
         else:

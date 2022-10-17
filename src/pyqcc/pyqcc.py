@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 #  Copyright (C) 2022 James Eubanks <jeubanks.github@gmail.com>
-# 
+#
 # Orignal work - pyspc
 #   Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
 #
@@ -18,8 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
+from __future__ import absolute_import, division, print_function, unicode_literals
 from .results import PlotCharts
 
 import matplotlib.pyplot as plt
@@ -28,13 +27,13 @@ import matplotlib as mpl
 import numpy as np
 import pandas as pd
 
-plt.style.use('grayscale')
-mpl.rcParams['lines.markersize'] = 4
+plt.style.use("grayscale")
+mpl.rcParams["lines.markersize"] = 4
 
 
 class qcc(object):
 
-    _title = 'SPC : Statistical Process Control Charts for Humans'
+    _title = "SPC : Statistical Process Control Charts for Humans"
 
     def __init__(self, data=None, newdata=None):
 
@@ -95,17 +94,21 @@ class qcc(object):
         for layer, ax in zip(self.layers, self.get_subplots()):
             summary = {}
 
-            values, center, lcl, ucl, title = layer.plot(self.data, self.size, self.newdata)
+            values, center, lcl, ucl, title = layer.plot(
+                self.data, self.size, self.newdata
+            )
             PlotCharts(ax, values, center, lcl, ucl, title)
 
-            summary['name'] = title
-            summary['values'] = values
-            summary['lcl'] = lcl
-            summary['ucl'] = ucl
-            summary['center'] = center
+            summary["name"] = title
+            summary["values"] = values
+            summary["lcl"] = lcl
+            summary["ucl"] = ucl
+            summary["center"] = center
 
             if self.points is not None:
-                summary['violation-points'] = self.points.plot_violation_points(ax, values, center, lcl, ucl)
+                summary["violation-points"] = self.points.plot_violation_points(
+                    ax, values, center, lcl, ucl
+                )
 
             self.summary.append(summary)
 

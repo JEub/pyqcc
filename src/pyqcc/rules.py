@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 #  Copyright (C) 2022 James Eubanks <jeubanks.github@gmail.com>
-# 
+#
 # Orignal work - pyspc
 #   Copyright (C) 2016  Carlos Henrique Silva <carlosqsilva@outlook.com>
 #
@@ -22,22 +22,21 @@ from .pyqcc import qcc
 
 
 class rules(object):
-
-    def __init__(self, rules='BASIC'):
+    def __init__(self, rules="BASIC"):
         self.layers = self
         self.rules = rules
 
         # default : BASIC
-        if rules.lower() == 'basic':
-            self.rules = [self.RULE_7_ON_ONE_SIDE,
-                          self.RULE_1_BEYOND_3SIGMA]
+        if rules.lower() == "basic":
+            self.rules = [self.RULE_7_ON_ONE_SIDE, self.RULE_1_BEYOND_3SIGMA]
         # WECO
-#        if rules == 2:
-#            self.rules = [self.RULES_1_BEYOND_3SIGMA,
-#                          self.RULES_2_OF_3_BEYOND_2SIGMA,
-#                          self.RULES_4_OF_5_BEYOND_1SIGMA,
-#                          self.RULES_8_ON_ONE_SIDE,
-#                          self.RULES_6_TRENDING, RULES_14_UP_DOWN]
+
+    #        if rules == 2:
+    #            self.rules = [self.RULES_1_BEYOND_3SIGMA,
+    #                          self.RULES_2_OF_3_BEYOND_2SIGMA,
+    #                          self.RULES_4_OF_5_BEYOND_1SIGMA,
+    #                          self.RULES_8_ON_ONE_SIDE,
+    #                          self.RULES_6_TRENDING, RULES_14_UP_DOWN]
 
     def __radd__(self, model):
         if isinstance(model, qcc):
@@ -61,19 +60,19 @@ class rules(object):
         if isinstance(lcl, list) and isinstance(ucl, list):
             for i, value in enumerate(values):
                 if self.test_beyond_limits(value, lcl[i], ucl[i]):
-                    ax.plot([i], value, 'ro', markersize=5)
+                    ax.plot([i], value, "ro", markersize=5)
                     points.append(i)
 
         elif isinstance(values[0], list):
             for i in range(len(values)):
                 for j, value in enumerate(values[i]):
                     if self.test_beyond_limits(value, lcl, ucl):
-                        ax.plot([j], value, 'ro', markersize=5)
+                        ax.plot([j], value, "ro", markersize=5)
                         points.append(j)
         else:
             for i in range(len(values)):
                 if self.test_beyond_limits(values[i], lcl, ucl):
-                    ax.plot([i], values[i], 'ro', markersize=5)
+                    ax.plot([i], values[i], "ro", markersize=5)
                     points.append(i)
 
         return points
@@ -91,8 +90,8 @@ class rules(object):
         for i in range(len(values)):
             if i <= (num - 1):
                 continue
-            if self.test_violating_runs(values[i - num + 1:i + 1], center, lcl, ucl):
-                ax.plot([i], values[i], 'yo', markersize=5)
+            if self.test_violating_runs(values[i - num + 1 : i + 1], center, lcl, ucl):
+                ax.plot([i], values[i], "yo", markersize=5)
                 points.append(i)
 
         return points

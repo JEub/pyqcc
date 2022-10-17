@@ -1,5 +1,5 @@
 # PyQCC
-Version: 0.1.6  
+Version: 0.1.9  
 
 This package is a modification of the original Work by Carlos Henrique Silva's <carlosqsilva@outlook.com> `pyspc` package. The original work can be found [here](https://github.com/carlosqsilva/pyspc). 
 

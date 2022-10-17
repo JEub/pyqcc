@@ -56,5 +56,5 @@ class rbar(ccharts):
 
         if newvalues is not None:
             return (newvalues, Rbar, lcl, ucl, self._title)
-        
+
         return (R, Rbar, lcl, ucl, self._title)

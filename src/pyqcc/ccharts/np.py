@@ -26,9 +26,9 @@ class np(ccharts):
         lcl = pbar - 3 * numpy.sqrt(pbar * (1 - p))
         ucl = pbar + 3 * numpy.sqrt(pbar * (1 - p))
 
-#        ax.plot([0, len(data)], [pbar, pbar], 'k-')
-#        ax.plot([0, len(data)], [lcl, lcl], 'r:')
-#        ax.plot([0, len(data)], [ucl, ucl], 'r:')
-#        ax.plot(data, 'bo--')
+        #        ax.plot([0, len(data)], [pbar, pbar], 'k-')
+        #        ax.plot([0, len(data)], [lcl, lcl], 'r:')
+        #        ax.plot([0, len(data)], [ucl, ucl], 'r:')
+        #        ax.plot(data, 'bo--')
 
         return (data, pbar, lcl, ucl, self._title)

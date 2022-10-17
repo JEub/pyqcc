@@ -1,6 +1,9 @@
 from .ccharts import ccharts
 from .tables import A3, B3, B4
 import numpy as np
+from scipy import stats
+from scipy.special import gamma
+from math import sqrt
 
 
 class xbar_sbar(ccharts):
@@ -10,7 +13,7 @@ class xbar_sbar(ccharts):
     def plot(self, data, size, newdata=None):
 
         assert size >= 2
-        assert size <= 10
+
         newvalues = None
 
         X, S = [], []
@@ -25,8 +28,14 @@ class xbar_sbar(ccharts):
         sbar = np.mean(S)
         xbar = np.mean(X)
 
-        lclx = xbar - A3[size] * sbar
-        uclx = xbar + A3[size] * sbar
+        if size <= 10:
+            a3 = A3[size]
+        else:
+            c4 = (gamma(size / 2) * sqrt(2 / (size - 1))) / (gamma((size - 1) / 2))
+            a3 = 3 / (c4 * sqrt(size))
+
+        lclx = xbar - a3 * sbar
+        uclx = xbar + a3 * sbar
 
         if newvalues is not None:
             return (newvalues, xbar, lclx, uclx, self._title)
@@ -41,7 +50,7 @@ class sbar(ccharts):
     def plot(self, data, size, newdata=None):
 
         assert size >= 2
-        assert size <= 10
+
         newvalues = None
 
         S = []
@@ -54,8 +63,16 @@ class sbar(ccharts):
 
         sbar = np.mean(S)
 
-        lcls = B3[size] * sbar
-        ucls = B4[size] * sbar
+        if size <= 10:
+            b3 = B3[size]
+            b4 = B4[size]
+        else:
+            c4 = (gamma(size / 2) * sqrt(2 / (size - 1))) / (gamma((size - 1) / 2))
+            b3 = 1 - (3 / (c4 * (sqrt(2 * (size - 1)))))
+            b4 = 1 + (3 / (c4 * (sqrt(2 * (size - 1)))))
+
+        lcls = b3 * sbar
+        ucls = b4 * sbar
 
         if newvalues is not None:
             return (newvalues, sbar, lcls, ucls, self._title)

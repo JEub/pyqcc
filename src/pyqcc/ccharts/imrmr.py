@@ -26,7 +26,7 @@ class I_MR_MR(ccharts):
                 samples[n] = [value]
 
         sample_size = len(samples[1])
-#        num_samples = len(samples)
+        #        num_samples = len(samples)
 
         sample_mr = []
         sample_mean = []
@@ -43,9 +43,9 @@ class I_MR_MR(ccharts):
         ucl_mr = D4[2] * mrbar
         lcl_mr = D3[2] * mrbar
 
-#        ax.plot([0, num_samples], [mrbar, mrbar], 'k-')
-#        ax.plot([0, num_samples], [lcl_mr, lcl_mr], 'r:')
-#        ax.plot([0, num_samples], [ucl_mr, ucl_mr], 'r:')
-#        ax.plot(sample_mr, 'bo--')
+        #        ax.plot([0, num_samples], [mrbar, mrbar], 'k-')
+        #        ax.plot([0, num_samples], [lcl_mr, lcl_mr], 'r:')
+        #        ax.plot([0, num_samples], [ucl_mr, ucl_mr], 'r:')
+        #        ax.plot(sample_mr, 'bo--')
 
         return (sample_mr, mrbar, lcl_mr, ucl_mr, self._title)

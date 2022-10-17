@@ -11,7 +11,7 @@ class c(ccharts):
 
         self.size = size - 1
 
-    def plot(self, ax, data, size, newdata=None):
+    def plot(self, data, size, newdata=None):
 
         sizes, data = data.T
         if self.size == 1:
@@ -24,10 +24,5 @@ class c(ccharts):
 
         lcl = cbar - 3 * np.sqrt(cbar)
         ucl = cbar + 3 * np.sqrt(cbar)
-#
-#        ax.plot([0, len(data)], [cbar, cbar], 'k-')
-#        ax.plot([0, len(data)], [lcl, lcl], 'r:')
-#        ax.plot([0, len(data)], [ucl, ucl], 'r:')
-#        ax.plot(data, 'bo-')
 
         return (data, cbar, lcl, ucl, self._title)
