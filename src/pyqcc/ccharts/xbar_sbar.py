@@ -13,7 +13,7 @@ class xbar_sbar(ccharts):
     def plot(self, data, size, newdata=None):
 
         assert size >= 2
-        
+
         newvalues = None
 
         X, S = [], []
@@ -27,13 +27,13 @@ class xbar_sbar(ccharts):
 
         sbar = np.mean(S)
         xbar = np.mean(X)
-        
+
         if size <= 10:
             a3 = A3[size]
         else:
-            c4 = (gamma(size / 2) * sqrt(2/(size - 1))) / (gamma((n-1)/2))
+            c4 = (gamma(size / 2) * sqrt(2 / (size - 1))) / (gamma((size - 1) / 2))
             a3 = 3 / (c4 * sqrt(size))
-        
+
         lclx = xbar - a3 * sbar
         uclx = xbar + a3 * sbar
 
@@ -67,9 +67,9 @@ class sbar(ccharts):
             b3 = B3[size]
             b4 = B4[size]
         else:
-            c4 = (gamma(size / 2) * sqrt(2/(size - 1))) / (gamma((n-1)/2))
-            b3 = 1 - (3 / (c4 * (sqrt(2*(size-1)))))
-            b4 = 1 + (3 / (c4 * (sqrt(2*(size-1)))))
+            c4 = (gamma(size / 2) * sqrt(2 / (size - 1))) / (gamma((size - 1) / 2))
+            b3 = 1 - (3 / (c4 * (sqrt(2 * (size - 1)))))
+            b4 = 1 + (3 / (c4 * (sqrt(2 * (size - 1)))))
 
         lcls = b3 * sbar
         ucls = b4 * sbar

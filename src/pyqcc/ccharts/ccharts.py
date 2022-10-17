@@ -4,7 +4,6 @@ from ..pyqcc import qcc
 
 
 class ccharts(object):
-
     def __init__(self):
         self.layers = [self]
 

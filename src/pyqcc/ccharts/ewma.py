@@ -14,7 +14,7 @@ class ewma(ccharts):
         self.weight = weight
 
     def plot(self, data, size, newdata=None):
-        assert ((self.weight > 0) and (self.weight < 1))
+        assert (self.weight > 0) and (self.weight < 1)
 
         if size > 1:
             data = np.mean(data, axis=1)
@@ -40,15 +40,26 @@ class ewma(ccharts):
 
         lcl, ucl = [], []
         for i in range(1, len(data) + 1):
-            lcl.append(target - 3 * (std) * np.sqrt((weight / (2 - weight)) * (1 - (1 - weight)**(2 * i))))
-            ucl.append(target + 3 * (std) * np.sqrt((weight / (2 - weight)) * (1 - (1 - weight)**(2 * i))))
+            lcl.append(
+                target
+                - 3
+                * (std)
+                * np.sqrt((weight / (2 - weight)) * (1 - (1 - weight) ** (2 * i)))
+            )
+            ucl.append(
+                target
+                + 3
+                * (std)
+                * np.sqrt((weight / (2 - weight)) * (1 - (1 - weight) ** (2 * i)))
+            )
 
-#        ax.plot([0, len(ewma)], [target, target], 'k-')
-#        ax.plot(lcl, 'r:')
-#        ax.plot(ucl, 'r:')
-#        ax.plot(ewma, 'bo--')
+        #        ax.plot([0, len(ewma)], [target, target], 'k-')
+        #        ax.plot(lcl, 'r:')
+        #        ax.plot(ucl, 'r:')
+        #        ax.plot(ewma, 'bo--')
 
         return (ewma, target, lcl, ucl, self._title)
+
 
 class mewma(ccharts):
 
@@ -81,11 +92,13 @@ class mewma(ccharts):
             z[i + 1] = self.lambd * mx[i] + (1 - self.lambd) * z[i]
         z = z[1:, :]
 
-        t2 = [] # values
+        t2 = []  # values
         for i in range(nrow):
-            w = (self.lambd / (2 - self.lambd)) * (1 - (1 - self.lambd)**(2 * (i + 1)))
+            w = (self.lambd / (2 - self.lambd)) * (
+                1 - (1 - self.lambd) ** (2 * (i + 1))
+            )
             inv = np.linalg.inv(w * s)
             t2.append((z[i].T @ inv) @ z[i])
 
         ucl = h4[int(self.lambd * 10) - 1][ncol - 1]
-        return(t2, 0, 0, ucl, self._title)
+        return (t2, 0, 0, ucl, self._title)

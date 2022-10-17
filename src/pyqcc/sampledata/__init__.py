@@ -4,36 +4,36 @@ import os
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 
-pistonrings = pd.read_csv(os.path.join(_ROOT, 'pistonrings.csv')).values
-    
-diameter = pd.read_csv(os.path.join(_ROOT, 'diameter.csv')).values
+pistonrings = pd.read_csv(os.path.join(_ROOT, "pistonrings.csv")).values
 
-parts = pd.read_csv(os.path.join(_ROOT, 'parts.csv')).values
-    
-sizes = pd.read_csv(os.path.join(_ROOT, 'sizes.csv')).values
-    
-chemical = pd.read_csv(os.path.join(_ROOT, 'chemical.csv')).values
-    
-newproduct = pd.read_csv(os.path.join(_ROOT, 'newproduct.csv')).values
-    
-waitingTime = pd.read_csv(os.path.join(_ROOT, 'waitingTime.csv')).values
+diameter = pd.read_csv(os.path.join(_ROOT, "diameter.csv")).values
 
-sandbox = pd.read_csv(os.path.join(_ROOT, 'sandbox.csv')).values
+parts = pd.read_csv(os.path.join(_ROOT, "parts.csv")).values
 
-canjuice = pd.read_csv(os.path.join(_ROOT, 'canjuice.csv')).values
+sizes = pd.read_csv(os.path.join(_ROOT, "sizes.csv")).values
 
-circuits = pd.read_csv(os.path.join(_ROOT, 'circuits.csv')).values
+chemical = pd.read_csv(os.path.join(_ROOT, "chemical.csv")).values
 
-inspection = pd.read_csv(os.path.join(_ROOT, 'inspection.csv')).values
+newproduct = pd.read_csv(os.path.join(_ROOT, "newproduct.csv")).values
 
-PaintMaterial = pd.read_csv(os.path.join(_ROOT, 'PaintMaterial.csv')).values
+waitingTime = pd.read_csv(os.path.join(_ROOT, "waitingTime.csv")).values
 
-Thickness = pd.read_csv(os.path.join(_ROOT, 'thickness.csv')).values
+sandbox = pd.read_csv(os.path.join(_ROOT, "sandbox.csv")).values
 
-viscosidade = pd.read_csv(os.path.join(_ROOT, 'Viscosidade.csv')).values
+canjuice = pd.read_csv(os.path.join(_ROOT, "canjuice.csv")).values
 
-plastic = pd.read_csv(os.path.join(_ROOT, 'hotelling.csv')).values
+circuits = pd.read_csv(os.path.join(_ROOT, "circuits.csv")).values
 
-experiment = pd.read_csv(os.path.join(_ROOT, 'experiment.csv')).values
+inspection = pd.read_csv(os.path.join(_ROOT, "inspection.csv")).values
 
-mewma_example = pd.read_csv(os.path.join(_ROOT, 'dados.csv')).values
+PaintMaterial = pd.read_csv(os.path.join(_ROOT, "PaintMaterial.csv")).values
+
+Thickness = pd.read_csv(os.path.join(_ROOT, "thickness.csv")).values
+
+viscosidade = pd.read_csv(os.path.join(_ROOT, "Viscosidade.csv")).values
+
+plastic = pd.read_csv(os.path.join(_ROOT, "hotelling.csv")).values
+
+experiment = pd.read_csv(os.path.join(_ROOT, "experiment.csv")).values
+
+mewma_example = pd.read_csv(os.path.join(_ROOT, "dados.csv")).values

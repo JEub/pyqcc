@@ -1,5 +1,5 @@
 from .ccharts import ccharts
-from.tables import B3, B4
+from .tables import B3, B4
 from scipy.stats import beta, f
 import numpy as np
 
@@ -46,7 +46,7 @@ class Tsquare_single(ccharts):
             value = matinv.dot(dif.T).dot(dif)
             values.append(value)
 
-        cl = ((numsample - 1)**2) / numsample
+        cl = ((numsample - 1) ** 2) / numsample
         lcl = cl * beta.ppf(0.00135, size / 2, (numsample - size - 1) / 2)
         center = cl * beta.ppf(0.5, size / 2, (numsample - size - 1) / 2)
         ucl = cl * beta.ppf(0.99865, size / 2, (numsample - size - 1) / 2)
@@ -93,8 +93,8 @@ class Tsquare(ccharts):
             a = means[i] - means_total
             values.append(5 * a @ Smat_inv @ a.T)
 
-        p1 = (p * (m - 1) * (n - 1))
-        p2 = (m * n - m - p + 1)
+        p1 = p * (m - 1) * (n - 1)
+        p2 = m * n - m - p + 1
         lcl = (p1 / p2) * f.ppf(0.00135, p, p2)
         center = (p1 / p2) * f.ppf(0.50, p, p2)
         ucl = (p1 / p2) * f.ppf(0.99865, p, p2)

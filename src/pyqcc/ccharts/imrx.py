@@ -26,7 +26,7 @@ class I_MR_X(ccharts):
                 samples[n] = [value]
 
         sample_size = len(samples[1])
-#        num_samples = len(samples)
+        #        num_samples = len(samples)
 
         sample_mean = []  # VALUES
         sample_mr = []
